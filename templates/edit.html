@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% block content %}
+<h1>Signup</h1>
+<form meath="post">
+    <table>
+       <tr>
+           <td><lable for="username">Username</lable></td>
+           <td><input name="username" type="text" value="">
+            <span class="error"></span>
+           </td>
+       </tr>
+       <tr>
+           <td><lable for="password">Password</lable></td>
+            <td><input name="password" type="password">
+            <span class="error"></span>
+        </td>
+        </tr>
+        <tr>
+            <td><lable for="verify">Verify Password</lable></td>
+            <td><input name="verify" type="password">
+             <span class="error"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email (optional)</label></td>
+            <td>
+                <input name="email" value="">
+                <span class="error"></span>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
