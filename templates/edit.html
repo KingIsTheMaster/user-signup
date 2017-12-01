@@ -1,33 +1,52 @@
 {% extends "base.html" %} 
 {% block content %}
-<h1>Signup</h1>
-<form meath="post">
+<center><h1>Signup</h1>
+<form action="/validate-user" method="post">
     <table>
        <tr>
            <td><lable for="username">Username</lable></td>
-           <td><input name="username" type="text" value="">
-            <span class="error"></span>
+           <td><input name="user-id" type="text" value="">
+            {% if username_error %}
+            <span class="error">  
+             {{username_error}}
+             </span>
+            {% endif %}
            </td>
        </tr>
        <tr>
            <td><lable for="password">Password</lable></td>
-            <td><input name="password" type="password">
-            <span class="error"></span>
+            <td><input name="user-password" type="password">
+             {% if password_error %}
+            <span class="error">
+             {{password_error}}
+            </span>
+            {% endif %}
         </td>
         </tr>
         <tr>
             <td><lable for="verify">Verify Password</lable></td>
-            <td><input name="verify" type="password">
-             <span class="error"></span>
+            <td><input name="verify-password" type="password">
+            {% if verify_error %}
+            <span class="error">
+            {{verify_error}}
+             </span>
+             {% endif %}
             </td>
         </tr>
         <tr>
             <td><label for="email">Email (optional)</label></td>
-            <td>
-                <input name="email" value="">
-                <span class="error"></span>
+            <td><input name="user-email" value="">
+             {% if email_error %}
+             <span class="error">
+             {{email_error}}
+             </span>
+             {% endif %}
             </td>
         </tr>
     </table>
+    <br>
+    <br>
+    <input type="submit">
+</center>
 </form>
 {% endblock %}
